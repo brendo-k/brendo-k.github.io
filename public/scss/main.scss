@@ -1,0 +1,26 @@
+@import "config";
+@import "menu";
+@import "index";
+@import "about";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: "Oswald", sans-serif; 
+  font-size: 30px;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  top: $menu-height; 
+}
+
+
+@media only screen and (max-width: 540px) {  
+  
+}

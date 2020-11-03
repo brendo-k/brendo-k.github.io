@@ -1,0 +1,10 @@
+$bg-color: #f4f2ef;
+$menu-link-color: #0f91fd;
+$menu-color: #2a2b2d;
+$menu-height: 3em;
+$menu-text-color: #ffffff;
+
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
