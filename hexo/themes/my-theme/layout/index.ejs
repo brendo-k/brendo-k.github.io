@@ -1,2 +1,20 @@
-<%- partial('_partial/archive', {pagination: 2, index: true}) %>
+<link rel="stylesheet" href="/fontawesome-free/css/all.min.css">
+<div class="blog">
+  <form class="blog-search-container">
+    <input class="blog-search" type="text" placeholder="Search by catagory or blog title">
+    <button class="search-button" type="submit">
+      <span class="search-button-color">
+        <i class="fa fa-search fa-2x"></i>
+      </span>
 
+    </button>
+  </form>
+  
+
+  <ul class="blog-list">
+    <% site.posts.forEach(function(post){ %>
+    <%- partial('_blog', {post: post})%>
+    <% }) %>
+  </ul>
+
+</div>

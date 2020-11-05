@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   background-color: #2a2b2d;
-  height: 3em;
+  height: 3rem;
   font-size: 30px;
   width: 100vw;
   margin: auto;
@@ -73,49 +73,51 @@
   border-radius: 5px;
   border: 2px solid #ffffff;
   position: fixed;
-  height: 1.5em;
-  width: 1.5em;
-  right: 0.75em;
-  top: 0.75em;
+  height: 1.55rem;
+  width: 1.55rem;
+  right: 0.75rem;
+  top: 0.75rem;
   transition: all 0.5s ease-in-out;
 }
 
 .navbar-toggler-icon {
   position: absolute;
   background-color: #ffffff;
-  left: 0.125em;
-  width: 1.25em;
+  left: 0.125rem;
+  width: 35px;
   height: 0.1em;
-  top: 0.7em;
+  top: 19.75px;
   transition: all 0.5s ease-in-out;
 }
 .navbar-toggler-icon::after {
   content: "";
   background-color: #ffffff;
   position: absolute;
-  width: 1.25em;
-  height: 0.1em;
+  height: 0.1rem;
+  width: 35px;
+  left: 0;
   top: 10px;
   transition: all 0.5s ease-in-out;
 }
 .navbar-toggler-icon::before {
   content: "";
   background-color: #ffffff;
+  left: 0;
+  width: 35px;
   position: absolute;
-  width: 1.25em;
-  height: 0.1em;
+  height: 0.1rem;
   top: -10px;
   transition: all 0.5s ease-in-out;
 }
 .navbar-toggler-icon.open {
-  transform: translate(0.75em, 0);
+  transform: translate(17.5px, 0);
   width: 0px;
 }
 .navbar-toggler-icon.open::before {
-  transform: translate(-0.75em, 10px) rotate(45deg);
+  transform: translate(-17.5px, 10px) rotate(45deg);
 }
 .navbar-toggler-icon.open::after {
-  transform: translate(-0.75em, -10px) rotate(-45deg);
+  transform: translate(-17.5px, -10px) rotate(-45deg);
 }
 
 .index {
@@ -183,23 +185,133 @@
   margin-bottom: 20px;
   padding-top: 20px;
   font-weight: 200;
+  font-family: arial;
+}
+
+.blog {
+  margin: auto;
+  width: 100vw;
+}
+
+.blog-list {
+  position: relative;
+  margin: 40px auto;
+  top: 20px;
+  list-style-type: none;
+  width: 800px;
+}
+.blog-list .blog-item {
+  background-clip: content-box;
+  height: 200px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 15px 0 15px 0;
+  background-clip: content-box;
+  box-shadow: -2px 2px 5px grey;
+  position: relative;
+}
+.blog-list .blog-item .blog-link {
+  text-decoration: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-weight: 200;
+  font-size: 16px;
+}
+.blog-list .blog-item .title {
+  display: inline-block;
+  margin: 10px 10px 0px 20px;
+  font-weight: 400;
+  font-size: 30px;
+}
+.blog-list .blog-item p {
+  display: inline-block;
+  float: right;
+  margin: 10px 10px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.blog-search {
+  width: 737px;
+  height: 51px;
+  top: 20px;
+  border: 2px solid black;
+  border-radius: 5px 0 0 5px;
+}
+
+.blog-search-container {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  top: 20px;
+}
+.blog-search-container input[type=text i] {
+  font-size: 20px;
+  padding: 6px 4px;
+}
+
+.search-button {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid black;
+  width: 51px;
+  height: 51px;
+  display: inline;
+  bottom: 0;
+  left: -2px;
+  border-radius: 0 5px 5px 0;
+  background: white;
+  box-sizing: border-box;
+}
+.search-button .search-button-color {
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+.search-button:hover .search-button-color {
+  background: grey;
+}
+
+.tags {
+  color: black;
+}
+
+.tag-item-link {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
 }
 
 body {
   background-color: #f4f2ef;
   font-family: "Oswald", sans-serif;
   font-size: 30px;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .content {
   position: relative;
-  top: 3em;
+  top: 3rem;
 }
 
 /*# sourceMappingURL=main.css.map */

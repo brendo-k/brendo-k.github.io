@@ -81,50 +81,52 @@
   border-radius: 5px;
   border: 2px solid $menu-text-color;
   position: fixed;
-  height: 1.5em;
-  width: 1.5em;
-  right: ($menu-height - 1.5em)/2;
-  top: ($menu-height - 1.5em)/2;
+  height: 1.55rem;
+  width: 1.55rem;
+  right: ($menu-height - 1.5rem)/2;
+  top: ($menu-height - 1.5rem)/2;
   @include transition-ease;
 }
 
 .navbar-toggler-icon{
   position: absolute;
   background-color: $menu-text-color;
-  left: .125em;
-  width: 1.25em;
+  left: .125rem;
+  width: 35px;
   height: .1em;
-  top: 1.5em/2 - .1em/2;
+  top: 19.75px;
   @include transition-ease;
 
   &::after{
     content: "";
     background-color: $menu-text-color;
     position:absolute;
-    width: 1.25em;
-    height: .1em;
+    height: .1rem;
+    width: 35px;
+    left: 0;
     top: 10px; 
     @include transition-ease;
   }
   &::before{
     content: "";
     background-color: $menu-text-color;
+    left: 0;
+    width: 35px;
     position:absolute;
-    width: 1.25em;
-    height: .1em;
+    height: .1rem;
     top: -10px; 
     @include transition-ease;
   }
 
   &.open {
-    transform: translate(.75em, 0);
+    transform: translate(17.5px, 0);
     width: 0px;
 
     &::before {
-      transform: translate(-.75em, 10px) rotate(45deg);
+      transform: translate(-17.5px, 10px) rotate(45deg);
     }
     &::after {
-      transform: translate(-.75em, -10px) rotate(-45deg);
+      transform: translate(-17.5px, -10px) rotate(-45deg);
     }
 
 

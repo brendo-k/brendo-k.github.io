@@ -1,0 +1,19 @@
+<li class="blog-item">
+  <a class="blog-link" href="<%= post.path %>">
+
+  </a>
+  <h2 class="title">
+    <%= post.title %>
+  </h2>
+
+  <% if(post.tags != []) { %>
+  <span class="tags">
+    <i class="fas fa-tags"></i>
+  </span>
+  <% }%>
+
+  <p>
+  <%- date(post.date, 'D/M/YYYY') %>
+  </p>
+  <%- list_tags(post.tags, {class: 'tag-item', style: false, separator: ', ', show_count: false}) %>
+</li>
