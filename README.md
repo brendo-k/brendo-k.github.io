@@ -11,5 +11,4 @@ TODO:
 - Add my projects to project page
 - Make contact page
 - Add transitions between links
-
-
+- Fix dotdotdot.js error 
