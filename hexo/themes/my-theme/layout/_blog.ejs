@@ -1,19 +1,25 @@
 <li class="blog-item">
-  <a class="blog-link" href="<%= post.path %>">
+  <a class="blog-link" href="<%= post.path %>"></a>
 
-  </a>
-  <h2 class="title">
-    <%= post.title %>
-  </h2>
-
-  <% if(post.tags != []) { %>
-  <span class="tags">
-    <i class="fas fa-tags"></i>
-  </span>
-  <% }%>
-
-  <p>
+  <div class="title-container">
+      <%= post.title %>
+  </div>
+  <p class="date">
   <%- date(post.date, 'D/M/YYYY') %>
   </p>
-  <%- list_tags(post.tags, {class: 'tag-item', style: false, separator: ', ', show_count: false}) %>
+
+  <div class="tags-container">
+    <% if(post.tags) { %>
+    <span class="tags-color">
+      <i class="fas fa-tag"></i>
+    </span>
+    <% }%>
+
+    <%- list_tags(post.tags, {class: 'tag-item', style: false, separator: ', ', show_count: false}) %>
+  </div>
+
+  <div class="content-container">
+    <%- post.content %>
+  </div>
+
 </li>

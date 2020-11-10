@@ -1,19 +1,50 @@
+
 <link rel="stylesheet" href="/fontawesome-free/css/all.min.css">
-<div class="blog">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.1.0/dotdotdot.js" integrity="sha512-y3NiupaD6wK/lVGW0sAoDJ0IR2f3+BWegGT20zcCVB+uPbJOsNO2PVi09pCXEiAj4rMZlEJpCGu6oDz0PvXxeg==" crossorigin="anonymous"></script>
+<nav class="navbar">
+  <div class="navbar-button">
+    <span class="navbar-toggler-icon"></span>
+  </div>
+  <div class="navbar-brand">
+    <a class="navbar-link" href="/">Brenden Kadota</a>
+  </div>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/html/about.html">About</a>
+    </li>
+    <div class="underline"></div>
+    <li class="nav-item">
+      <a class="nav-link active" href="/blog/index.html">Blog</a>
+    </li>
+    <div class="underline"></div>
+    <li class="nav-item">
+      <a class="nav-link" href="/blog/projects/index.html">Projects</a>
+    </li>
+    <div class="underline"></div>
+    <li class="nav-item">
+      <a class="nav-link" ref="/html/contact.html">Contact</a>
+    </li>
+    <div class="underline"></div>
+  </ul>
+</nav>
+<div class="blog content">
   <form class="blog-search-container">
     <input class="blog-search" type="text" placeholder="Search by catagory or blog title">
     <button class="search-button" type="submit">
+
       <span class="search-button-color">
-        <i class="fa fa-search fa-2x"></i>
+        <i class="fas fa-search"></i>
       </span>
 
     </button>
   </form>
   
-
+  
   <ul class="blog-list">
     <% site.posts.forEach(function(post){ %>
+    <% if(post.layout == 'post') { %>
     <%- partial('_blog', {post: post})%>
+    <% } %>
     <% }) %>
   </ul>
 

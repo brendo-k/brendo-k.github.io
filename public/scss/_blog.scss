@@ -8,11 +8,11 @@
   margin: 40px auto;
   top: 20px;
   list-style-type: none;
-  width: 800px;
+  width: 75%;
+  max-width: 800px;
 
 
   .blog-item {
-    background-clip: content-box;
     height: 200px;
     background-color: #ffffff; 
     border-radius: 20px;
@@ -29,19 +29,14 @@
       color: black;
       font-weight: 200;
       font-size: 16px;
+      z-index: 1;
 
     }
-    .title {
-      display: inline-block;
-      margin: 10px 10px 0px 20px;
-      font-weight: 400;
-      font-size: 30px;
-    }
 
-    p {
+    .date {
       display: inline-block;
       float: right;
-      margin: 10px 10px;
+      margin: 10px 20px 0px 0px;
       font-size: 16px;
       font-weight: 200;
     }
@@ -49,8 +44,21 @@
   }
 }
 
+
+.title-container {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 65%;
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px 0px 0px 20px;
+    font-weight: 400;
+    font-size: 30px;
+
+}
+
 .blog-search {
-  width: 737px;
+  width: 749px;
   height: 51px;
   top: 20px;
   border: 2px solid black;
@@ -62,8 +70,9 @@
   text-align: center;
   position: relative;
   display: flex;
+  margin: auto;
   justify-content: center;
-  width: 100%;
+  width: 75%;
   box-sizing: border-box;
   max-width:100%;
   top: 20px;
@@ -81,6 +90,7 @@
 .search-button{
   position:relative;
   cursor: pointer;
+  min-width:51px;
   border: 2px solid black;
   width:51px;
   height:51px;
@@ -93,20 +103,31 @@
 
   .search-button-color{
     color: black;
+    font-size: 25px;
     @include transition-ease;
+
   }
 
   &:hover .search-button-color{
-    background: grey;
+    color: grey;
+
   }
 
 
 }
 
 
+.tags-container{
+    top: -20px;
+    position: relative;
+}
 
-.tags{
+
+.tags-color{
   color: black;
+  font-size: 20px;
+  position: relative;
+  margin: 0px 0px 0px 20px;
 }
 
 .tag-item-link {
@@ -115,4 +136,18 @@
   color: black;
   font-size: 20px;
   font-weight: 400;
+  z-index: 2;
+}
+
+.content-container {
+    margin: 0px 20px;
+    position: relative;
+    top: -10px;
+    height: 95px;
+    overflow: hidden;
+
+    p {
+        font-size: 16px;
+        font-weight: 200;
+    }
 }

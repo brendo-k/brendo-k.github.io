@@ -24,3 +24,11 @@ function toggle_menu(){
   }
 }
 
+
+document.addEventListener( "DOMContentLoaded", () => {
+   let wrapper = document.querySelector( ".content-container" );
+   let options = {
+      // Options go here
+   };
+   new Dotdotdot( wrapper, options );
+});

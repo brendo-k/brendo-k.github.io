@@ -7,10 +7,12 @@
   background-color: $menu-color;
   height: $menu-height;
   font-size: 30px;
+  top: 0px;
   width: 100vw;
   margin: auto;
   @include transition-ease;
-  z-index: 1;
+  z-index: 3;
+
 
   &.open {
     height: 100vh;
@@ -45,9 +47,11 @@
   .nav-item {
     padding-top: 15px;
     padding-bottom: 15px;
+
   }
+
   
-  a {
+  .nav-link {
     color: $menu-text-color;
     text-decoration: none;
     display: inline-block;
@@ -66,10 +70,16 @@
       width: 0;
     }
 
+
     &:hover:after {
       width: 100%;
       left: 0;
     }
+  }
+
+  .active::after {
+      width: 100%;
+      left: 0;
   }
 
   &.open {
@@ -85,6 +95,7 @@
   width: 1.55rem;
   right: ($menu-height - 1.5rem)/2;
   top: ($menu-height - 1.5rem)/2;
+  cursor: pointer;
   @include transition-ease;
 }
 
