@@ -7,7 +7,7 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "scss": "sass --watch public/scss:public/css"
+    "scss": "sass --watch docs/scss:docs/css"
   },
   "hexo": {
     "version": "5.2.0"

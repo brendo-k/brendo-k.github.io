@@ -4,6 +4,7 @@
 @import "about";
 @import "blog";
 @import "project";
+@import "contact";
 
 * {
   margin: 0px;
@@ -14,6 +15,7 @@
 html {
   font-family: "Oswald", sans-serif; 
   font-size: 30px;
+  height: 100%;
 }
 
 body {
@@ -23,6 +25,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   width: 100vw;
+  height: 100%;
 }
 
 .content {
@@ -30,7 +33,3 @@ body {
   top: $menu-height; 
 }
 
-
-@media only screen and (max-width: 540px) {  
-  
-}
