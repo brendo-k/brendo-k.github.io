@@ -10,6 +10,10 @@ This is currently an incomplete project as there are many things I still need to
 TODO:
 - Write real blog posts
 - Add my projects to project page
-- Make contact page
+- Make about page look nicer
 - Add transitions between links
 - Fix dotdotdot.js error 
+
+Completed:
+
+- ~~Make contact page~~
