@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   background-color: #2a2b2d;
-  height: 3rem;
+  height: 6rem;
   font-size: 30px;
   top: 0px;
   width: 100vw;
@@ -18,12 +18,33 @@
 .navbar-brand {
   position: fixed;
   left: 25px;
+  font-size: 2rem;
   top: 20px;
   z-index: 2;
 }
 .navbar-brand a {
   color: #ffffff;
   text-decoration: none;
+}
+.navbar-brand::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  background: #0f91fd;
+  transition: all 0.5s ease-in-out;
+  width: 0;
+}
+.navbar-brand:hover:after {
+  width: 100%;
+  left: 0;
+}
+.navbar-brand.active::after {
+  width: 100%;
+  left: 0;
 }
 
 .navbar-nav {
@@ -76,12 +97,12 @@
 
 .navbar-button {
   border-radius: 5px;
-  border: 2px solid #ffffff;
+  border: 0.2rem solid #ffffff;
   position: fixed;
-  height: 1.55rem;
-  width: 1.55rem;
-  right: 0.75rem;
-  top: 0.75rem;
+  height: 3rem;
+  width: 3rem;
+  right: 1.5rem;
+  top: 1.5rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
@@ -89,9 +110,9 @@
 .navbar-toggler-icon {
   position: absolute;
   background-color: #ffffff;
-  left: 0.125rem;
-  width: 35px;
-  height: 0.1em;
+  left: 0.2rem;
+  width: 2.2rem;
+  height: 0.2rem;
   top: 19.75px;
   transition: all 0.5s ease-in-out;
 }
@@ -99,8 +120,8 @@
   content: "";
   background-color: #ffffff;
   position: absolute;
-  height: 0.1rem;
-  width: 35px;
+  height: 0.2rem;
+  width: 2.2rem;
   left: 0;
   top: 10px;
   transition: all 0.5s ease-in-out;
@@ -109,9 +130,9 @@
   content: "";
   background-color: #ffffff;
   left: 0;
-  width: 35px;
+  width: 2.2rem;
   position: absolute;
-  height: 0.1rem;
+  height: 0.2rem;
   top: -10px;
   transition: all 0.5s ease-in-out;
 }
@@ -135,6 +156,7 @@
   width: 400px;
   position: relative;
   margin: auto;
+  overflow: hidden;
   clip-path: circle(50% at 50% 50%);
   transition: all 0.5s ease-in-out;
 }
@@ -182,7 +204,8 @@
 }
 
 .about p {
-  width: 800px;
+  max-width: 800px;
+  width: 75%;
   font-size: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -206,7 +229,7 @@
   max-width: 800px;
 }
 .blog-list .blog-item {
-  height: 200px;
+  height: 180px;
   background-color: #ffffff;
   border-radius: 20px;
   margin: 15px 0 15px 0;
@@ -320,7 +343,8 @@
 }
 .content-container p {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  line-height: 1.5;
+  font-size: 1rem;
   font-weight: 200;
 }
 
@@ -337,6 +361,10 @@
 }
 .post p {
   margin: 10px 20px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 200;
   position: relative;
   display: inline-block;
 }
@@ -376,6 +404,7 @@
 .post-title {
   margin: 20px;
   display: inline-block;
+  font-size: 2rem;
 }
 
 .project-container {
@@ -462,7 +491,7 @@
 
 html {
   font-family: "Oswald", sans-serif;
-  font-size: 30px;
+  font-size: 16px;
   height: 100%;
 }
 
@@ -478,7 +507,7 @@ body {
 
 .content {
   position: relative;
-  top: 3rem;
+  top: 6rem;
 }
 
 /*# sourceMappingURL=main.css.map */

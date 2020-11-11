@@ -13,7 +13,7 @@
 
 
   .blog-item {
-    height: 200px;
+    height: 180px;
     background-color: #ffffff; 
     border-radius: 20px;
     margin: 15px 0 15px 0;
@@ -148,7 +148,8 @@
 
     p {
         font-family: 'Open Sans', sans-serif;
-        font-size: 16px;
+        line-height: 1.5;
+        font-size: 1rem;
         font-weight: 200;
     }
 }
@@ -166,6 +167,10 @@
 
   p {
     margin: 10px 20px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 200;
     position:relative;
     display:inline-block;
   }
@@ -209,5 +214,6 @@
 .post-title {
   margin: 20px;
   display:inline-block;
+  font-size: 2rem;
 }
 

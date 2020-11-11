@@ -30,14 +30,17 @@
 </nav>
 <div class="content">
   <div class="post">
-    <h1 class="post-title">
-
-      <%= page.title %>
-    </h1>
-    <div class="return-button-container">
-      <a href="/blog/index.html"></a>
-      <span class="return-button"></span>
-    </div>
+    <header class="post-header"> 
+      <div class="return-button-container">
+        <a href="/blog/index.html"></a>
+        <span class="return-button"></span>
+      </div>
+      <h1 class="post-title">
+        <%= page.title %>
+      </h1>
+    </header>
+    <div class="blog-content">
     <%- page.content %>
+    </div>
   </div>
 </div>

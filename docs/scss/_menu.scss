@@ -23,11 +23,36 @@
 .navbar-brand {
   position: fixed;
   left: 25px;
+  font-size: 2rem;
   top: 20px;
   z-index: 2;
   a {
     color: $menu-text-color;
     text-decoration: none;
+  }
+
+  &::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    background: $menu-link-color;
+    @include transition-ease;
+    width: 0;
+  }
+
+
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+  &.active::after {
+      width: 100%;
+      left: 0;
   }
 }
 
@@ -89,12 +114,12 @@
 
 .navbar-button{
   border-radius: 5px;
-  border: 2px solid $menu-text-color;
+  border: 0.2rem solid $menu-text-color;
   position: fixed;
-  height: 1.55rem;
-  width: 1.55rem;
-  right: ($menu-height - 1.5rem)/2;
-  top: ($menu-height - 1.5rem)/2;
+  height: 3rem;
+  width: 3rem;
+  right: ($menu-height - 3rem)/2;
+  top: ($menu-height - 3rem)/2;
   cursor: pointer;
   @include transition-ease;
 }
@@ -102,9 +127,9 @@
 .navbar-toggler-icon{
   position: absolute;
   background-color: $menu-text-color;
-  left: .125rem;
-  width: 35px;
-  height: .1em;
+  left: .2rem;
+  width: 3rem - .8rem;
+  height: .2rem;
   top: 19.75px;
   @include transition-ease;
 
@@ -112,8 +137,8 @@
     content: "";
     background-color: $menu-text-color;
     position:absolute;
-    height: .1rem;
-    width: 35px;
+    height: .2rem;
+    width: 3rem - .8rem;
     left: 0;
     top: 10px; 
     @include transition-ease;
@@ -122,9 +147,9 @@
     content: "";
     background-color: $menu-text-color;
     left: 0;
-    width: 35px;
+    width: 3rem - .8rem;
     position:absolute;
-    height: .1rem;
+    height: .2rem;
     top: -10px; 
     @include transition-ease;
   }
