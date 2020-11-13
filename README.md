@@ -9,11 +9,13 @@ This is currently an incomplete project as there are many things I still need to
 
 TODO:
 - Write real blog posts
-- Add my projects to project page
-- Make about page look nicer
 - Add transitions between links
 - Fix dotdotdot.js error 
+- Fix Scrollbar on about page
+- Show my timeline on about page.
 
 Completed:
 
 - ~~Make contact page~~
+- ~~Add my projects to project page~~
+- ~~Make about page look nicer~~
