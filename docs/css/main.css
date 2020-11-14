@@ -217,13 +217,37 @@
   box-shadow: -2px 2px 5px grey;
   margin: auto;
 }
-.about-container p {
+.about-container .about-content {
   font-size: 20px;
-  margin: 0 10px 20px 10px;
+  margin: 10px 10px 45px 10px;
   overflow: hidden;
   font-weight: 200;
   line-height: 1.5;
   font-family: arial;
+}
+
+.job-title {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+}
+
+.date {
+  display: inline-block;
+  float: right;
+  font-size: 16px;
+  font-weight: 200;
+  font-family: arial;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  margin: 0 10px;
+}
+
+.about-description {
+  position: relative;
+  height: 20px;
 }
 
 .blog {
