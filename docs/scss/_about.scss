@@ -31,7 +31,7 @@
   left: 10px;
 }
 
-.date{
+.about-date{
   display: inline-block;
   float: right;
   font-size: 16px;
@@ -46,4 +46,32 @@
 .about-description{
   position: relative;
   height: 20px;
+}
+
+
+.resume-link {
+  display:inline-block;
+  text-decoration: none;
+  position:relative;
+  color: black;
+  font-size: 25px;
+  margin: 30px 0px;
+
+  &::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    background: $menu-link-color;
+    @include transition-ease;
+    width: 0;
+  }
+
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
 }
