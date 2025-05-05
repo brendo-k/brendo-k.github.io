@@ -11,8 +11,9 @@ if __name__ == '__main__':
 
     for i in range(image.shape[-1]):
         image_slice = np.abs(image[:, :, i])
+        image_slice = np.flip(image_slice, 0)
         print(image_slice)
         pil_iamge = Image.fromarray(image_slice)
         pil_image = pil_iamge.convert('RGB')
-        pil_image.save(os.path.join('./mri-slices/', f'slice_{i}.jpg'))
+        pil_image.save(os.path.join('public/mri-slices/', f'slice_{i}.jpg'))
         

@@ -1,63 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brenden Kadota | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Brenden Kadota | Portfolio</title>
+      <script type="module" crossorigin src="/brendo-k.github.io/assets/index-BunMDlMB.js"></script>
+      <link rel="stylesheet" crossorigin href="/brendo-k.github.io/assets/index-B04yQVw0.css">
+    </head>
+    <body>
+        <div id="current-content">
+            <header>
+                <h1>Brenden Kadota</h1>
+                <p>Medical Imaging Scientist | MRI and Deep Learning Enthusiast</p>
+            </header>
+            <div id="viewer-wrapper">
+                <div id="viewer-container">
+                    <canvas id="mri-viewer"></canvas>
+                </div>
+                <div id="viewer-label">
+                    This is me! <br />
+                    Scroll and drag to explore my brain.
+                </div>
+            </div>
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+            <button id="scroll-down-button" class="chevron-button">
+                &#9660;
+                <!-- Down chevron character -->
+            </button>
+        </div>
 
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
+        <section id="more-content">
+            <div class="documents">
+                <div class="documents-container">
+                    <a href="/Brenden_Kadota_Resume.pdf" class="document-link">Resume</a>
+                    <a href="/Brenden_Kadota_CV.pdf" class="document-link">Curriculum Vitae</a>
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project">
+                    <img src="/brendo-k.github.io/assets/output_70-D6Tkwwhp.png" class="project-img" />
+                    <div class="card">
+                        <h2>Deep Learning Multi-Contrast MRI</h2>
+                        <p>
+                            Here I proposed a novel method for accelerating MRI scans using deep learning. 
+                            I developed a neural network to train on multiple MRI contrats which contains
+                            highly correlated information to reduce scan times by a factor up to 8x. 
+                        </p>
+                        <div class="links">
+                            <a href="#" class="live-site">Read More!</a>
+                            <a href="#" class="source-code">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="card">
+                        <h2>Deep Learning for Cardiac MRI Videos</h2>
+                        <p>
+                            Cardiac MRI often aquires videos of the heart to assess function. 
+                            I developed a neural network to reconstruct accelerated cardiac MRI videos 
+                            by leveraging the compressability of video data. This resulted in a 3x 
+                            reduction in memory requirements and training time while still achieving 
+                            4x reduction in scanning time.
 
-        header p {
-            font-size: 1.2em;
-            color: #666;
-        }
+                        </p>
+                        <div class="tech-tags">
+                            <span>PyTorch</span>
+                            <span>Recurrent Neural Networks</span>
+                            <span>Attention</span>
+                            <span>Self-Supervised Learning</span>
+                            <span>WandB</span>
+                        </div>
+                        <div class="links">
+                            <a href="#" class="live-site">Read More!</a>
+                            <a href="#" class="source-code">Source Code</a>
+                        </div>
+                    </div>
+                    <img src="/brendo-k.github.io/assets/output_70-D6Tkwwhp.png" class="project-img">
 
-        #viewer-container {
-            width: 600px;
-            height: 600px;
-            position: relative;
-            background-color: #333;
-        }
+                </div>
+            </div>
+            <div class="publications-section">
+                <div class="publications-header">
+                    <h2>Publications</h2>
+                    <p>Research contributions in MRI and deep learning</p>
+                </div>
 
-        #scrollbar {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-  <script type="module" crossorigin src="/assets/index-CnXKiU9b.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Brenden Kadota</h1>
-        <p>Medical Imaging Scientist | MRI and Deep Learning Enthusiast</p>
-    </header>
+                <div class="publications-container">
+                    <!-- Publication 1 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2023</span>
+                        <h3 class="publication-title">Multi-Contrast MRI Reconstruction Using Self-Supervised Learning and Attention Networks</h3>
+                        <p class="publication-authors">Smith J., <span class="author-highlight">Kadota B.</span>, Johnson R., Williams T.</p>
+                        <p class="publication-venue">Journal of Magnetic Resonance Imaging, Vol. 41, Issue 3</p>
+                        <div class="publication-abstract">
+                            This paper introduces a novel approach for multi-contrast MRI reconstruction using deep learning. By leveraging the inherent relationships between different MRI contrasts, our method achieves up to 8x acceleration while maintaining diagnostic quality. Our attention-based neural network architecture effectively captures spatial and contrast dependencies, outperforming current state-of-the-art methods on both quantitative metrics and radiologist evaluations.
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="publication-link">View Paper</a>
+                            <a href="#" class="publication-link">Code Repository</a>
+                            <a href="#" class="publication-link">Dataset</a>
+                            <button class="expand-btn">Read Abstract</button>
+                        </div>
+                    </div>
 
-    <div id="viewer-container">
-        <canvas id="mri-viewer"></canvas>
-        <input type="range" id="scrollbar" min="1" max="100" value="1">
-    </div>
-
-</body>
+                    <!-- Publication 2 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2022</span>
+                        <h3 class="publication-title">Compressed Memory Networks for Accelerated Cardiac MRI Video Reconstruction</h3>
+                        <p class="publication-authors"><span class="author-highlight">Kadota B.</span>, Chen A., Thompson P.</p>
+                        <p class="publication-venue">IEEE Transactions on Medical Imaging, Vol. 37, Issue 8</p>
+                        <div class="publication-abstract">
+                            Cardiac MRI videos provide crucial information about heart function but require lengthy acquisition times. In this work, we develop a compressed memory network that leverages the temporal redundancy in cardiac videos to achieve 4x acceleration while reducing memory requirements by 3x compared to conventional approaches. Our method demonstrates superior performance in preserving dynamic cardiac features critical for clinical assessment.
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="publication-link">View Paper</a>
+                            <a href="#" class="publication-link">Code Repository</a>
+                            <button class="expand-btn">Read Abstract</button>
+                        </div>
+                    </div>
+
+                    <!-- Publication 3 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2021</span>
+                        <h3 class="publication-title">Self-Supervised Pretraining for Improved MRI Reconstruction from Undersampled Data</h3>
+                        <p class="publication-authors">Garcia M., <span class="author-highlight">Kadota B.</span>, Lee S., Brown D.</p>
+                        <p class="publication-venue">Medical Image Computing and Computer Assisted Intervention (MICCAI), pp. 418-427</p>
+                        <div class="publication-abstract">
+                            We propose a self-supervised pretraining approach that significantly improves deep learning-based MRI reconstruction from undersampled k-space data. By learning anatomical priors from large unlabeled MRI datasets, our method reduces the need for fully-sampled ground truth data during training. Results show improved reconstruction quality across multiple anatomies and acceleration factors compared to supervised approaches trained on limited data.
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="publication-link">View Paper</a>
+                            <a href="#" class="publication-link">Presentation Slides</a>
+                            <button class="expand-btn">Read Abstract</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
-

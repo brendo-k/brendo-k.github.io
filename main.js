@@ -35,6 +35,8 @@ function loadSlice(sliceNumber) {
         planes[sliceNumber - 1].material.map = texture;
         planes[sliceNumber - 1].material.opacity = 1;
         planes[sliceNumber - 1].material.needsUpdate = true;
+        //planes[sliceNumber - 1].rotation.y = Math.PI / 2; // 90 degrees in radians
+        planes[sliceNumber - 1].scale.y = -1
     });
 }
 
@@ -69,5 +71,30 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+
+const scrollButton = document.getElementById('scroll-down-button');
+const targetSection = document.getElementById('more-content');
+
+scrollButton.addEventListener('click', () => {
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+});
+
 animate();
 
+// JavaScript to toggle abstract visibility
+document.addEventListener('DOMContentLoaded', function() {
+    const expandButtons = document.querySelectorAll('.expand-btn');
+
+    expandButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const publicationItem = this.closest('.publication-item');
+            publicationItem.classList.toggle('expanded');
+
+            if (publicationItem.classList.contains('expanded')) {
+                this.textContent = 'Hide Abstract';
+            } else {
+                this.textContent = 'Read Abstract';
+            }
+        });
+    });
+});

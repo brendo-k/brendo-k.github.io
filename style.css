@@ -1,0 +1,658 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color:aliceblue
+}
+
+header p {
+    font-size: 1.6em;
+    color: #666;
+}
+
+#viewer-container {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    background-color: #333;
+    margin: auto; /* Centers the div horizontally */
+}
+
+#viewer-wrapper {
+    display: gird;
+    place-items: center;
+    position: relative;
+    gap: 10px; /* Space between the viewer and label */
+}
+
+#viewer-label {
+    position: absolute;
+    width: 300px;
+    top: 50%; /* Align with the center vertically */
+    left: calc(100% + 20px); /* Offset from the viewer-container */
+    transform: translateY(-50%); /* Adjust for natural vertical alignment */
+    color: #666;
+    font-size: 1.2em;
+}
+
+.chevron-button {
+    background-color: transparent; /* Initial background */
+    border: none;
+    font-size: 30px; /* Adjust size as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    color: aliceblue;
+    position: relative;
+    top: 20px;
+}
+
+.chevron-button:hover {
+    background-color: #666; /* Background on hover */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.project-content {
+    width: 1000px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.documents {
+    width: 1000px;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#more-content {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    gap: 20px;
+    align-items: center; /* Optional: center horizontally */
+}
+
+.project {
+    width: 100%;
+    min-height: 600px;
+    background-color: #111;
+    padding: 0;
+    justify-content: space-between;
+    border-radius: 12px;
+    color: white;
+    text-align: left;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-description {
+    width: 400px
+}
+
+.project h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.project p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.project-img {
+    height: 600px;
+    width: 600px;
+}
+
+#current-content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.welcome-section {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.github-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.github-button:hover {
+    background-color: #333;
+}
+
+.card {
+    flex: 1.5;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.card ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.card ul li {
+    margin-bottom: 5px;
+}
+
+.tech-tags {
+    margin-bottom: 20px;
+}
+
+.tech-tags span {
+    display: inline-block;
+    background: #e0f7fa;
+    color: #00695c;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.live-site {
+    background: #4caf50;
+}
+
+.live-site:hover {
+    background: #388e3c;
+}
+
+.source-code {
+    background: black;
+}
+
+.source-code:hover {
+    background: #333;
+}
+
+.documents-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    margin: 20px 0;
+    font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
+}
+
+.document-link {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 10px;
+}
+
+.document-link:hover {
+    transform: translateY(-5px);
+    color: #e0e0e0;
+}
+
+.document-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #e0e0e0;
+    transition: width 0.3s ease;
+}
+
+.document-link:hover::after {
+    width: 100%;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.project-img {
+    height: 600px;
+    width: 600px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    position: relative;
+}
+
+.project:hover .project-img {
+    transform: scale(1.03);
+}
+
+.card {
+    flex: 1.5;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add subtle pattern overlay to card */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.card h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 60px;
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    border-radius: 2px;
+}
+
+.card p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+    color: #ccc;
+    font-size: 1.05rem;
+}
+
+.tech-tags {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tags span {
+    display: inline-block;
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    transition: all 0.2s ease;
+}
+
+.tech-tags span:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateY(-2px);
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.live-site {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.live-site:hover {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+}
+
+.source-code {
+    background: transparent;
+    border: 1px solid #666;
+    box-shadow: none;
+}
+
+.source-code:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #999;
+}
+
+/* Ensure projects stack well on mobile */
+@media (max-width: 1200px) {
+    .project {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .project-img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 30px;
+    }
+}
+
+/* Publications Section Styling */
+.publications-section {
+    width: 1000px;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.publications-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.publications-header h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 600;
+    color: white;
+}
+
+.publications-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    border-radius: 2px;
+}
+
+.publications-header p {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.publications-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.publication-item {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.publication-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.publication-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.05;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.publication-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.publication-authors {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.author-highlight {
+    font-weight: 600;
+    color: #8bc34a;
+}
+
+.publication-venue {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #999;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.publication-abstract {
+    color: #bbb;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, margin-bottom 0.5s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.publication-item.expanded .publication-abstract {
+    max-height: 500px;
+    margin-bottom: 20px;
+}
+
+.publication-actions {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.publication-link {
+    text-decoration: none;
+    color: white;
+    background: rgba(33, 150, 243, 0.1);
+    border: 1px solid rgba(33, 150, 243, 0.3);
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.publication-link:hover {
+    background: rgba(33, 150, 243, 0.2);
+    transform: translateY(-2px);
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: #4caf50;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.expand-btn:hover {
+    color: #8bc34a;
+}
+
+.publication-year {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 0.9rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+@media (max-width: 1050px) {
+    .publications-section {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .publication-actions {
+        flex-wrap: wrap;
+    }
+}
+
