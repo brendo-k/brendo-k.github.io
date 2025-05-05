@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import './style.css'
+
 
 // Set up basic Three.js scene
 const canvas = document.getElementById('mri-viewer');
@@ -30,7 +32,7 @@ controls.enableZoom = false;
 controls.update();
 
 function loadSlice(sliceNumber) {
-    const slicePath = `mri-slices/output_${sliceNumber}.png`;
+    const slicePath = `./mri-slices/output_${sliceNumber}.png`;
     textureLoader.load(slicePath, (texture) => {
         planes[sliceNumber - 1].material.map = texture;
         planes[sliceNumber - 1].material.opacity = 1;
