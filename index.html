@@ -19,7 +19,7 @@
         <div id="current-content">
             <header>
                 <h1>Brenden Kadota</h1>
-                <p>Medical Imaging Scientist | MRI and Deep Learning Enthusiast</p>
+                <p>Medical Imaging Scientist | MRI and Deep Learning Scientist</p>
             </header>
             <div id="viewer-wrapper">
                 <div id="viewer-container">
@@ -46,44 +46,47 @@
             </div>
             <div class="project-content">
                 <div class="project">
-                    <img src="public/mri-slices/output_70.png" class="project-img" />
+                    <img src="./public/projects/Learned_Partitioning.jpg" class="project-img" />
                     <div class="card">
-                        <h2>Deep Learning Multi-Contrast MRI</h2>
+                        <h2>Optimized MRI Self-Supervised Reconstruction</h2>
                         <p>
-                            Here I proposed a novel method for accelerating MRI scans using deep learning. 
-                            I developed a neural network to train on multiple MRI contrats which contains
-                            highly correlated information to reduce scan times by a factor up to 8x. 
+                            Here I propose a way to learn the optimal self-supervised training framework for self-supervised MRI reconstruction. 
+                            In self-supervised MRI reconstruction, data is typically split into two sets for training. Here, we learn the optimal
+                            splitting using a prababalistic network to determine the optimal splitting.
                         </p>
                         <div class="links">
-                            <a href="#" class="live-site">Read More!</a>
-                            <a href="#" class="source-code">Source Code</a>
+                            <a href="https://github.com/brendo-k/mri_machine_learning_reconstruction" class="source-code">Source Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project">
                     <div class="card">
+                        <h2>Self-Supervised Multi-Modal MRI Reconstruction</h2>
+                        <p>
+                            I propose a novel self-supervised model which leverages the multiple imaging modalities that come from a typical MRI scan. 
+                            This model was able to improve image quality metrics compared to single-modality netorks.
+                        </p>
+                        <div class="links">
+                            <a href="https://github.com/brendo-k/mri_machine_learning_reconstruction" class="source-code">Source Code</a>
+                        </div>
+                    </div>
+                    <img src="./public/projects/Multi-Contrast_SSL.png" class="project-img" />
+                </div>
+                <div class="project">
+                    <img src="./public/projects/CG_Network.jpg" class="project-img">
+                    <div class="card">
                         <h2>Deep Learning for Cardiac MRI Videos</h2>
                         <p>
                             Cardiac MRI often aquires videos of the heart to assess function. 
                             I developed a neural network to reconstruct accelerated cardiac MRI videos 
-                            by leveraging the compressability of video data. This resulted in a 3x 
+                            by leveraging the compressability of video data using the SVD. This resulted in a 3x 
                             reduction in memory requirements and training time while still achieving 
                             4x reduction in scanning time.
-
                         </p>
-                        <div class="tech-tags">
-                            <span>PyTorch</span>
-                            <span>Recurrent Neural Networks</span>
-                            <span>Attention</span>
-                            <span>Self-Supervised Learning</span>
-                            <span>WandB</span>
-                        </div>
                         <div class="links">
-                            <a href="#" class="live-site">Read More!</a>
-                            <a href="#" class="source-code">Source Code</a>
+                            <a href="https://github.com/brendo-k/CMRxRecon2024" class="source-code">Source Code</a>
                         </div>
                     </div>
-                    <img src="public/mri-slices/output_70.png" class="project-img">
 
                 </div>
             </div>
@@ -96,54 +99,129 @@
                 <div class="publications-container">
                     <!-- Publication 1 -->
                     <div class="publication-item">
-                        <span class="publication-year">2023</span>
-                        <h3 class="publication-title">Multi-Contrast MRI Reconstruction Using Self-Supervised Learning and Attention Networks</h3>
-                        <p class="publication-authors">Smith J., <span class="author-highlight">Kadota B.</span>, Johnson R., Williams T.</p>
-                        <p class="publication-venue">Journal of Magnetic Resonance Imaging, Vol. 41, Issue 3</p>
+                        <span class="publication-year">2025</span>
+                        <h3 class="publication-title">Learned K-Space Partitioning for Improved Dual-Domain Self-Supervised Image Reconstruction</h3>
+                        <p class="publication-authors"> <span class="author-highlight">Kadota B.</span>, Millard C., Chiew M.</p>
+                        <p class="publication-venue">Conference in IEEE Engineering in Medicine and Biology (in press)</p>
                         <div class="publication-abstract">
-                            This paper introduces a novel approach for multi-contrast MRI reconstruction using deep learning. By leveraging the inherent relationships between different MRI contrasts, our method achieves up to 8x acceleration while maintaining diagnostic quality. Our attention-based neural network architecture effectively captures spatial and contrast dependencies, outperforming current state-of-the-art methods on both quantitative metrics and radiologist evaluations.
+                            Self-supervised magnetic resonance imaging (MRI) reconstruction methods can train deep learning networks without requiring fully sampled reference data. One such approach, self-supervised via data under-sampling (SSDU), partitions under-sampled k-space into two disjoint sets, with a neural network mapping between them. However, SSDU and its variants rely on heuristic k-space partitioning, which may lead to suboptimal performance and necessitates new partitioning schemes when initial under-sampling patterns change. In this work, we propose a novel approach to learn optimal k-space partitioning by modeling a probability distribution which we use for partitioning. Specifically, we employ the LOUPE framework to learn an optimal partitioning probability distribution. Furthermore, we introduce a weighted dual-domain self- supervised loss function that incorporates both k-space and image-space loss terms. Evaluations on the fastMRI dataset demonstrate that our dual-domain learned partitioning method outperforms existing partitioning strategies and adapts to new sampling patterns without requiring hand-picked partitioning methods. 
+                        </div> <div class="publication-actions">
+                            <a href="./public/EMBC_2025_Brenden.pdf" class="publication-link">View Paper</a>
+                            <button class="expand-btn">Read Abstract</button>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="publication-year">2024</span>
+                        <h3 class="publication-title">Low-Rank Tensor U-Net for Accelerated Cardiac MR Imaging</h3>
+                        <p class="publication-authors">Patel J., <span class='author-highlight'>Kadota B.</span>, Sheagren C., Chiew M., Wright G.</p>
+                        <p class="publication-venue">International Workshop on Statistical Atlases and Computational Models of the Heart</p>
+                        <div class="publication-abstract">
+                            Cardiovascular diseases (CVDs) remain the leading cause of mortality and morbidity worldwide. Both diagnosis and prognosis of these diseases benefit from high-quality imaging, which cardiac magnetic resonance imaging provides. CMR imaging requires lengthy acquisition times and multiple breath-holds for a complete exam, which can lead to patient discomfort and frequently results in image artifacts. In this work, we present a Low-rank tensor U-Net method (LowRank-CGNet) that rapidly reconstructs highly undersampled data with a variety of anatomy, contrast, and undersampling artifacts. The model uses conjugate gradient data consistency to solve for the spatial and temporal bases and employs a U-Net to further regularize the basis vectors. Currently, model performance is superior to a standard U-Net, but inferior to conventional compressed sensing methods. In the future, we aim to further improve model performance by increasing the U-Net size, extending the training duration, and dynamically updating the tensor rank for different anatomies.
                         </div>
                         <div class="publication-actions">
-                            <a href="#" class="publication-link">View Paper</a>
-                            <a href="#" class="publication-link">Code Repository</a>
-                            <a href="#" class="publication-link">Dataset</a>
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-87756-8_33" class="publication-link">View Paper</a>
+                            <button class="expand-btn">Read Abstract</button>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <span class="publication-year">2023</span>
+                        <h3 class="publication-title">Retrospective frequency drift correction of rosette MRSI data using spectral registration</h3>
+                        <p class="publication-authors"> <span class="author-highlight">Kadota B</span>, Millard C, Chiew M</p>
+                        <p class="publication-venue">Magnetic Resonance in Medicine</p>
+                        <div class="publication-abstract">
+                            Purpose: Frequency drift correction is an important postprocessing step in MRS that yields improvements in spectral quality and metabolite quantification. Although routinely applied in single-voxel MRS, drift correction is much more challenging in MRSI due to the presence of phase-encoding gradients. Thus, separately acquired navigator scans are normally required for drift estimation. In this work, we demonstrate the use of self-navigating rosette MRSI trajectories combined with time-domain spectral registration to enable retrospective frequency drift corrections without the need for separately acquired navigator echoes.
+                            Methods: A rosette MRSI sequence was implemented to acquire data from the brains of 5 healthy volunteers. FIDs from the center of k-space (k = 0 FIDs) were isolated from each shot of the rosette acquisition, and time-domain spectral registration was used to estimate the frequency offset of each k = 0 FID relative to a reference scan (the first k = 0 FID in the series). The estimated frequency offsets were then used to apply corrections throughout k -space. Improvements in spectral quality were assessed before and after drift correction.
+                            Results: Spectral registration resulted in significant improvements in signal-to-noise ratio (12.9%) and spectral linewidths (18.5%). Metabolite quantification was performed using LCModel, and the average Cramer-Rao lower bounds uncertainty estimates were reduced by 5.0% for all metabolites, following field drift correction.
+                            Conclusion: This study demonstrated the use of self-navigating rosette MRSI trajectories to retrospectively correct frequency drift errors in in vivo MRSI data. This correction yields meaningful improvements in spectral quality.
+                        </div>
+                        <div class="publication-actions">
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-87756-8_33" class="publication-link">View Paper</a>
                             <button class="expand-btn">Read Abstract</button>
                         </div>
                     </div>
 
                     <!-- Publication 2 -->
                     <div class="publication-item">
-                        <span class="publication-year">2022</span>
-                        <h3 class="publication-title">Compressed Memory Networks for Accelerated Cardiac MRI Video Reconstruction</h3>
-                        <p class="publication-authors"><span class="author-highlight">Kadota B.</span>, Chen A., Thompson P.</p>
-                        <p class="publication-venue">IEEE Transactions on Medical Imaging, Vol. 37, Issue 8</p>
+                        <span class="publication-year">2023</span>
+                        <h3 class="publication-title">Accelerated Cardiac Parametric Mapping Using Deep Learning-Refined Subspace Models</h3>
+                        <p class="publication-authors">Sheagren C., <span class="author-highlight">Kadota B.</span>, Patel J., Chiew M., Wright., G</p>
+                        <p class="publication-venue">International Workshop on Statistical Atlases and Computational Models of the Heart</p>
                         <div class="publication-abstract">
-                            Cardiac MRI videos provide crucial information about heart function but require lengthy acquisition times. In this work, we develop a compressed memory network that leverages the temporal redundancy in cardiac videos to achieve 4x acceleration while reducing memory requirements by 3x compared to conventional approaches. Our method demonstrates superior performance in preserving dynamic cardiac features critical for clinical assessment.
+                            Cardiac parametric mapping is useful for evaluating cardiac fibrosis and edema. Parametric mapping relies on single-shot heartbeat-by-heartbeat imaging, which is susceptible to intra-shot motion during the imaging window. However, reducing the imaging window requires undersampled reconstruction techniques to preserve image fidelity and spatial resolution. The proposed approach is based on a low-rank tensor model of the multi-dimensional data, which jointly estimates spatial basis images and temporal basis time-courses from an auxiliary parallel imaging reconstruction. The tensor-estimated spatial basis is then further refined using a deep neural network, trained in a fully supervised fashion, improving the fidelity of the spatial basis using learned representations of cardiac basis functions. This two-stage spatial basis estimation will be compared against Fourier-based reconstructions and parallel imaging alone to demonstrate the sharpening and denoising properties of the deep learning-based subspace analysis.
                         </div>
                         <div class="publication-actions">
-                            <a href="#" class="publication-link">View Paper</a>
-                            <a href="#" class="publication-link">Code Repository</a>
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-52448-6_35" class="publication-link">View Paper</a>
                             <button class="expand-btn">Read Abstract</button>
                         </div>
                     </div>
 
                     <!-- Publication 3 -->
                     <div class="publication-item">
-                        <span class="publication-year">2021</span>
-                        <h3 class="publication-title">Self-Supervised Pretraining for Improved MRI Reconstruction from Undersampled Data</h3>
-                        <p class="publication-authors">Garcia M., <span class="author-highlight">Kadota B.</span>, Lee S., Brown D.</p>
-                        <p class="publication-venue">Medical Image Computing and Computer Assisted Intervention (MICCAI), pp. 418-427</p>
+                        <span class="publication-year">2023</span>
+                        <h3 class="publication-title">Jérôme Waldispühl, When online citizen science meets teaching: Storyfication of a science discovery game to teach, learn, and contribute to genomic research</h3>
+                        <p class="publication-authors">C. Drogaris, A. Butyaev, E. Nazarova, R. Sarrazin-Gendron, H. Patel, A. Singh, B. Kadota. </p>
+                        <p class="publication-venue">Biochemistry and Molecular Biology Education,</p>
                         <div class="publication-abstract">
-                            We propose a self-supervised pretraining approach that significantly improves deep learning-based MRI reconstruction from undersampled k-space data. By learning anatomical priors from large unlabeled MRI datasets, our method reduces the need for fully-sampled ground truth data during training. Results show improved reconstruction quality across multiple anatomies and acceleration factors compared to supervised approaches trained on limited data.
+                            In the last decade, video games became a common vehicle for citizen science initiatives in life science, allowing participants to contribute to real scientific data analysis while learning about it. Since 2010, our scientific discovery game (SDG) Phylo enlists participants in comparative genomic data analysis. It is frequently used as a learning tool, but the activities were difficult to aggregate to build a coherent teaching activity. Here, we describe a strategy and series of recipes to facilitate the integration of SDGs in courses and implement this approach in Phylo. We developed new roles and functionalities enabling instructors to create assignments and monitor the progress of students. A story mode progressively introduces comparative genomics concepts, allowing users to learn and contribute to the analysis of real genomic sequences. Preliminary results from a user study suggest this framework may help to boost user motivation and clarify pedagogical objectives.
                         </div>
                         <div class="publication-actions">
-                            <a href="#" class="publication-link">View Paper</a>
-                            <a href="#" class="publication-link">Presentation Slides</a>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/37929794/" class="publication-link">View Paper</a>
                             <button class="expand-btn">Read Abstract</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="publications-section">
+                <div class="publications-header">
+                    <h2>Conferences</h2>
+                    <p>Presentations and Posters at Scientific Meetings</p>
+                </div>
+
+                <div class="publications-container">
+                    <!-- Conference 1 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2025</span>
+                        <h3 class="publication-title">Learned K-Space Partitioning for Improved Dual-Domain Self-Supervised Image Reconstruction</h3>
+                        <p class="publication-authors"><span class="author-highlight">Kadota B.</span>, Millard C., Chiew M.</p>
+                        <p class="publication-venue">ISMRM, Honolulu, Hawaii</p>
+                    </div>
+
+                    <!-- Conference 2 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2024</span>
+                        <h3 class="publication-title">Joint Multi-Contrast Image Reconstruction with Self-Supervised Learning</h3>
+                        <p class="publication-authors"><span class="author-highlight">Kadota B.</span>, Millard C., Chiew M.</p>
+                        <p class="publication-venue">ISMRM, Singapore</p>
+                    </div>
+
+                    <!-- Conference 3 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2022</span>
+                        <h3 class="publication-title">MRSI Processing and Simulation Toolbox in the FID Appliance (FID-A)</h3>
+                        <p class="publication-authors"><span class="author-highlight">Kadota B.</span>, Strasser B., Oakden W., Near J.</p>
+                        <p class="publication-venue">ISMRM Magnetic Resonance Spectroscopy Study Group</p>
+                    </div>
+
+                    <!-- Conference 4 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2022</span>
+                        <h3 class="publication-title">MRSI Processing and Simulation Toolbox in the FID Appliance (FID-A)</h3>
+                        <p class="publication-authors"><span class="author-highlight">Kadota B.</span>, Strasser B., Oakden W., Near J.</p>
+                        <p class="publication-venue">ISMRM, London, United Kingdom</p>
+                    </div>
+
+                    <!-- Conference 5 -->
+                    <div class="publication-item">
+                        <span class="publication-year">2022</span>
+                        <h3 class="publication-title">Frequency and Phase Drift Correction of Rosette MRSI Data using Spectral Registration</h3>
+                        <p class="publication-authors">Senthil S.V., <span class="author-highlight">Kadota B.</span>, Near J.</p>
+                        <p class="publication-venue">ISMRM, London, United Kingdom</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
         <script type="module" src="./main.js"></script>
     </body>
